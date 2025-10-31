@@ -111,7 +111,7 @@ defmodule ErrorTracker.Integrations.Plug do
     conn |> build_context |> ErrorTracker.set_context()
   end
 
-  @sensitive_headers ["cookie", "authorization"]
+  @sensitive_headers ["cookie", "authorization", "consumer-key"]
 
   defp build_context(conn = %Plug.Conn{}) do
     %{
